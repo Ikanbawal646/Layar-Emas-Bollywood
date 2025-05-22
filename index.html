@@ -2,258 +2,43 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Layar Emas Bollywood</title>
+  <title>Beranda - Masjid Jamie Nurul Baher</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #141414;
-      color: #fff;
-    }
-    header {
-      background-color: #e50914;
-      padding: 1rem 2rem;
-      font-size: 2rem;
-      font-weight: bold;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      letter-spacing: 1px;
-    }
-    header .badge {
-      background-color: #f5c518;
-      color: #000;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      margin-left: 1rem;
-    }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem 2rem;
-    }
-    select, input[type="text"] {
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: none;
-      font-size: 1rem;
-    }
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 1rem 2rem;
-    }
-    .video-card {
-      background-color: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-      display: flex;
-      flex-direction: column;
-    }
-    .video-thumb {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-    .video-title {
-      padding: 0.5rem;
-      font-size: 1rem;
-      flex-grow: 1;
-    }
-    video {
-      width: 100%;
-      display: none;
-    }
-    .video-card.playing video {
-      display: block;
-    }
-    .video-card.playing .video-thumb {
-      display: none;
-    }
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin: 1rem 0;
-      gap: 0.5rem;
-    }
-    .pagination button {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .pagination button.active {
-      background-color: #e50914;
-    }
+    body { font-family: Arial; background: #f4f4f4; margin: 0; color: #333; }
+    header, footer { background: #2c3e50; color: white; text-align: center; padding: 20px; }
+    nav { background: #1abc9c; text-align: center; padding: 20px; font-size: 48px; }
+    nav a { color: white; margin: 10px; text-decoration: none; font-weight: bold; font-size: 48px; }
+    section { padding: 2px; max-width: 800px; margin: auto; background: white; margin-top: 10px; border-radius: 10px; }
   </style>
 </head>
 <body>
-  <header>
-    Layar Emas Bollywood <span class="badge">8 Video</span>
-  </header>
 
-  <div class="filters">
-    <input type="text" id="searchInput" placeholder="Cari judul film...">
-    <select id="yearFilter">
-      <option value="">Filter Tahun</option>
-      <option value="1998">1998</option>
-      <option value="2002">2002</option>
-      <option value="2003">2003</option>
-      <option value="2004">2004</option>
-      <option value="2005">2005</option>
-    </select>
-    <select id="letterFilter">
-      <option value="">Filter Abjad</option>
-      <option value="A">A</option>
-      <option value="D">D</option>
-      <option value="I">I</option>
-      <option value="J">J</option>
-      <option value="K">K</option>
-      <option value="M">M</option>
-    </select>
-    <select id="sortOrder">
-      <option value="">Urutkan</option>
-      <option value="newest">Terbaru</option>
-      <option value="oldest">Terlama</option>
-    </select>
-  </div>
+<header>
+  <h1>Masjid Jamie Nurul Baher</h1>
+  <p>مسجد جميع نور البحر</p>
+ <p>Menjadi Cahaya di Tengah Masyarakat</p>
+</header>
 
-  <div class="videos">
-    <!-- Setiap video -->
-    <!-- (Data-title konsisten, tahun benar, judul proper) -->
-    
-<div class="videos">
-  <div class="video-card" data-title="Sangharsh" data-year="1999">
-    <img class="video-thumb" src="https://i.ytimg.com/vi/1S0O_KVhgWY/hq720.jpg" alt="Sangharsh">
-    <video src="https://archive.org/download/sangharsh-1999-xvi-drip/Sangharsh%201999%20XviDRip.mp4" controls></video>
-    <div class="video-title">Sangharsh (1999)</div>
-  </div>
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="profil.html">Profil</a>
+  <a href="jadwal.html">Jadwal</a>
+  <a href="phbi.html">PHBI</a>
+  <a href="keuangan.html">Keuangan</a>
+  <a href="kegiatan.html">Kegiatan</a>
+  <a href="lokasi.html">Lokasi</a>
+  <a href="galeri.html">Galeri</a>
+  <a href="kontak.html">Kontak</a>
+</nav>
 
-  <div class="video-card" data-title="Refugee" data-year="2000">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT50i2iW3DxfA6OPaUCU6JPBUZgNJL4HIF8hA&s" alt="Refugee">
-    <video src="https://archive.org/download/refugee-2000-xvi-drip/Refugee%202000%20XviDRip.mp4" controls></video>
-    <div class="video-title">Refugee (2000)</div>
-  </div>
+<section>
+  <h2>Selamat Datang</h2>
+  <p>Ini adalah situs resmi Masjid Jamie Nurul Baher. Temukan informasi seputar kegiatan, profil, jadwal sholat, dan lainnya.</p>
+</section>
 
-  <div class="video-card" data-title="Fida" data-year="2004">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjbCBIJOc1XfFgErcAM3Ugfz7kDBz6mQCnQ&s" alt="Fida">
-    <video src="https://archive.org/download/fida-2004-xvi-drip/Fida%202004%20XviDRip.mp4" controls></video>
-    <div class="video-title">Fida (2004)</div>
-  </div>
+<footer>
+  <p>&copy; 2025 Masjid Jamie Nurul Baher</p>
+</footer>
 
-  <div class="video-card" data-title="Duplicate" data-year="1998">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW4wApNLqks_jC0ly5KmzgjLvHX7IzsVUVUw&usqp=CAU" alt="Duplicate">
-    <video src="https://archive.org/download/duplicate-1998-dv-drip-x-264-aac-5.1-esub-telly/Duplicate%201998%20DvDRip%20x264%20AAC%205.1%20ESub%20%20%5BTelly%5D.mp4" controls></video>
-    <div class="video-title">Duplicate (1998)</div>
-  </div>
-
-  <div class="video-card" data-title="Bewafaa" data-year="2005">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyycINVIAsGnNigrbSc3e9SY1wpvj81I_miUOGWZ8baG32zDVRXYk6JPI2&s=10" alt="Bewafaa">
-    <video src="https://archive.org/download/bewafaa-2005-dv-drip-charme-leon-silver-rg/Bewafaa%202005%20DvDRip%20CharmeLeon%20Silver%20RG.mp4" controls></video>
-    <div class="video-title">Bewafaa (2005)</div>
-  </div>
-
-  <div class="video-card" data-title="Madhoshi" data-year="2004">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjmgxMhnA33UeVSLLa7wh4iauJHDqFCMXiQ&s" alt="Madhoshi">
-    <video src="https://archive.org/download/madhoshi-2004-xvi-drip/Madhoshi%202004%20XviDRip.mp4" controls></video>
-    <div class="video-title">Madhoshi (2004)</div>
-  </div>
-
-  <div class="video-card" data-title="Kal Ho Naa Ho" data-year="2003">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4QfFXbzMkXnSqzhx96eqLFkpe1MtdxcFuDbY7K9jTP71C0OocYQgh9KD4&s=10" alt="Kal Ho Naa Ho">
-    <video src="https://archive.org/download/kal-ho-naa-ho-2003-xvi-drip/Kal%20Ho%20Naa%20Ho%202003%20XviDRip.mp4" controls></video>
-    <div class="video-title">Kal Ho Naa Ho (2003)</div>
-  </div>
-
-  <div class="video-card" data-title="Ishq Hai Tumse" data-year="2003">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXFSQDgzFbNU9-UGzfWaibWEbpQiuKvkqY72OC8jfYF6OVB3VpKsetvY7F&s=10" alt="Ishq Hai Tumse">
-    <video src="https://archive.org/download/ishq-hai-tumse-2003-xvi-drip/Ishq%20Hai%20Tumse%202003%20XviDRip.mp4" controls></video>
-    <div class="video-title">Ishq Hai Tumse (2003)</div>
-  </div>
-
-  <div class="video-card" data-title="Jurm" data-year="2005">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ta4hR9dH_xAYALVXUD9fMKuOrFt0BcmUADnHTkZE07Ul4QTQ6N2OvGA&s=10" alt="Jurm">
-    <video src="https://archive.org/download/jurm-2005-dv-drip-charme-leon-silver-rg/Jurm%202005%20DvDRip%20CharmeLeon%20Silver%20RG.mp4" controls></video>
-    <div class="video-title">Jurm (2005)</div>
-  </div>
-
-  <div class="video-card" data-title="Mujhse Dosti Karoge" data-year="2002">
-    <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbOL33zqHEFO1UzUqPQfpJRKVW3rBdBxLOjdXs_0p-KBtgK2noHtdOqLu2&s=10" alt="Mujhse Dosti Karoge">
-    <video src="https://archive.org/download/mujhse-dosti-karoge-2002-dv-drip-x-264-dts...-hon-3y/Mujhse%20Dosti%20Karoge%202002%20DvDrip%20x264%20DTS...Hon3y.mp4" controls></video>
-    <div class="video-title">Mujhse Dosti Karoge (2002)</div>
-  </div>
-
-    </div>
-  </div>
-
-  <div class="pagination">
-    <button class="active">1</button>
-    <button>2</button>
-    <button>3</button>
-  </div>
-
-  <script>
-    const yearFilter = document.getElementById('yearFilter');
-    const letterFilter = document.getElementById('letterFilter');
-    const sortOrder = document.getElementById('sortOrder');
-    const searchInput = document.getElementById('searchInput');
-    const videosContainer = document.querySelector('.videos');
-
-    function filterVideos() {
-      const selectedYear = yearFilter.value;
-      const selectedLetter = letterFilter.value.toUpperCase();
-      const searchText = searchInput.value.toUpperCase();
-
-      const videoCards = document.querySelectorAll('.video-card');
-      videoCards.forEach(card => {
-        const title = card.dataset.title.toUpperCase();
-        const year = card.dataset.year;
-        const matchesYear = !selectedYear || year === selectedYear;
-        const matchesLetter = !selectedLetter || title.startsWith(selectedLetter);
-        const matchesSearch = !searchText || title.includes(searchText);
-        card.style.display = (matchesYear && matchesLetter && matchesSearch) ? 'block' : 'none';
-      });
-    }
-
-    function sortVideos() {
-      const order = sortOrder.value;
-      const videoCards = Array.from(document.querySelectorAll('.video-card'));
-
-      videoCards.sort((a, b) => {
-        const yearA = parseInt(a.dataset.year);
-        const yearB = parseInt(b.dataset.year);
-        return order === 'newest' ? yearB - yearA : yearA - yearB;
-      });
-
-      videoCards.forEach(card => videosContainer.appendChild(card));
-    }
-
-    [yearFilter, letterFilter, sortOrder, searchInput].forEach(el => {
-      el.addEventListener('input', () => {
-        filterVideos();
-        sortVideos();
-      });
-    });
-
-    document.querySelectorAll('.video-card').forEach(card => {
-      const thumb = card.querySelector('.video-thumb');
-      const video = card.querySelector('video');
-      thumb.addEventListener('click', () => {
-        document.querySelectorAll('.video-card').forEach(c => {
-          c.classList.remove('playing');
-          c.querySelector('video').pause();
-        });
-        card.classList.add('playing');
-        video.currentTime = 0;
-        video.play();
-      });
-    });
-  </script>
 </body>
 </html>
