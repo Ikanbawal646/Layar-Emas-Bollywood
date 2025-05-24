@@ -4,51 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Layar Emas Bollywood</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #141414;
       color: #fff;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     header {
       background-color: #e50914;
-      background-image: url('content://com.lcg.Xplore.FileContent/uid/file%3A%2F%2F%2Fstorage%2Femulated%2F0%2Fcoding%2FYouTube%2Ffile_00000000120461f78c7af08a4757dcea%2520(1).png?size=2848107&time=1747944000');
-      background-size: 330px;
+      background-image: url('content://com.lcg.Xplore.FileContent/uid/file%3A%2F%2F%2Fstorage%2Femulated%2F0%2Fcoding%2FYouTube%2FIMG_20250524_061425.png');
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      padding: 7.5rem;
-      font-size: 2rem;
-      font-weight: bold;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      letter-spacing: 1px;
+      padding: 2.5rem;
       position: sticky;
       top: 0;
       z-index: 1000;
+      text-align: center;
       color: #fff;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .header-title {
-      font-size: 36px;
+      font-size: 18px;
       font-weight: 700;
+    }
+   .search-container {
+  background-color: black;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  border-top: 1px solid #333;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 256px;
+    }
+
+    #searchBox {
+      width: 100%;
+      padding: 0.6rem 2.5rem;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      background-color: #1f1f1f;
       color: #fff;
+      outline: none;
+      transition: 0.3s ease;
+      box-shadow: inset 0 0 0 1px #333;
+    }
+
+    #searchBox:focus {
+      box-shadow: 0 0 5px 2px #e50914;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filters div {
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+    }
+
+    select, input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
     }
 
     .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom tetap */
+  gap: 1rem;
+  padding: 2rem;
+@media (max-width: 600px) {
+  .videos {
+    grid-template-columns: 1fr; /* Satu kolom di layar kecil */
     }
 
     .video-card {
       text-align: center;
       background-color: #1c1c1c;
       border-radius: 8px;
-      padding: 0.5rem;
+      padding: 0.4rem;
       transition: transform 0.3s ease;
     }
 
@@ -57,49 +119,128 @@
     }
 
     .video-thumb {
-      width: 90%;
-      border-radius: 6px;
+      width: 120px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     .video-title {
       margin-top: 0.5rem;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
-      color: #fff;
     }
 
     a {
       text-decoration: none;
       color: inherit;
     }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-title"> </div>
-  </header>
+  <!-- Wrapper untuk membekukan header dan pencarian -->
+  <div style="position: sticky; top: 0; z-index: 1000;">
+    <header>
+      <div class="header-title"> </div>
+    </header>
 
+    <!-- Kotak Pencarian -->
+    <div class="search-container">
+      <div class="search-wrapper">
+        <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Cari">
+        <input type="text" id="searchBox" placeholder="Cari film...">
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="filters">
+    <div>
+      <label for="yearFilter">Tahun:</label>
+      <select id="yearFilter">
+        <option value="">Semua Tahun</option>
+        <option value="1998">1998</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+      </select>
+    </div>
+    <div>
+      <label for="letterFilter">Abjad:</label>
+      <select id="letterFilter">
+        <option value="">Semua Abjad</option>
+        <option value="A">A</option>
+        <option value="D">D</option>
+        <option value="I">I</option>
+        <option value="J">J</option>
+        <option value="K">K</option>
+        <option value="M">M</option>
+      </select>
+    </div>
+    <div>
+      <label for="sortOrder">Urutkan:</label>
+      <select id="sortOrder">
+        <option value="">Tidak diurutkan</option>
+        <option value="newest">Terbaru</option>
+        <option value="oldest">Terlama</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Daftar Video -->
   <div class="videos">
-    <a href="Duplicate.html" class="video-card">
-      <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW4wApNLqks_jC0ly5KmzgjLvHX7IzsVUVUw&usqp=CAU" alt="Duplicate">
-      <div class="video-title">Duplicate</div>
+  <a href="Pathaan 2023.html" class="video-card">
+      <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQN1VxNKufG_iNr9mE7KVUCNdVnWjDLTmLgtenv_KzKDtLutPBKZYt0an&s=10" alt="Pathaan 2023">
+      <div class="video-title"><p>Pathaan 2023</p></div>
     </a>
 
-   <a href="Bewafaa.html" class="video-card">
+    <a href="FIZA2000.html" class="video-card">
+      <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpflAL3AN7m7ejIT7a1sYznod8Ea82gf61Mg&s" alt="FIZA">
+      <div class="video-title"><p>FIZA2000</p></div>
+    </a>
+
+    <a href="fanaa.html" class="video-card">
+      <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN9tiufNUEXkHeN8iV8FEQiepycURgMM1aoQ&s" alt="fanaa">
+      <div class="video-title"><p>fanaa</p></div>
+    </a>
+    <a href="Ashoka.html" class="video-card">
+      <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8tXFA00Zq7kTztxLy-4QUlFL_gOnOXtC6LX8jRHltmCbRUCPQy0r15Oc&s=10" alt="Ashoka">
+      <div class="video-title">Ashoka</div>
+    </a>
+
+    <a href="Bewafaa.html" class="video-card">
       <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyycINVIAsGnNigrbSc3e9SY1wpvj81I_miUOGWZ8baG32zDVRXYk6JPI2&s=10" alt="Bewafaa">
       <div class="video-title">Bewafaa</div>
     </a>
-
     <a href="Fida.html" class="video-card">
       <img class="video-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjbCBIJOc1XfFgErcAM3Ugfz7kDBz6mQCnQ&s" alt="Fida">
       <div class="video-title">Fida</div>
     </a>
+  </div>
 
-<div class="back-link">
- 
+  <footer>
+    <p>&copy; 2025 Layar Emas Bollywood</p>
+  </footer>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const videoCards = document.querySelectorAll('.video-card');
+
+    searchBox.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      videoCards.forEach(card => {
+        const title = card.querySelector('.video-title').textContent.toLowerCase();
+        card.style.display = title.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
-
-
-<footer><p>&copy; 2025 Layar Emas Bollywood</p></footer>
-
 </html>
